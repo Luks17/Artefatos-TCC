@@ -106,8 +106,6 @@ objetivos = [
     },
 ]
 
-# No gráfico de técnicas, a cor representa a classificação complementar:
-# caixa-preta, caixa-branca ou caixa-cinza.
 cores_caixa = {
     "caixa-preta": "#333333",
     "caixa-branca": "#FF9DA6",
@@ -230,24 +228,41 @@ def plotar_categorias(ax, categorias, titulo, largura_rotulo=24, usar_tipo_caixa
     ax.set_axisbelow(True)
 
 
-fig, axes = plt.subplots(3, 1, figsize=(15, 17.5))
+saida = Path("./output/")
+saida.mkdir(parents=True, exist_ok=True)
 
+# Figura 1: níveis
+fig, ax = plt.subplots(figsize=(7.5, 6.5))
 plotar_categorias(
-    axes[0],
+    ax,
     niveis,
     "Níveis de teste",
     largura_rotulo=22,
 )
+plt.tight_layout()
+fig.savefig(saida / "fig-qp1-niveis.pdf", bbox_inches="tight")
+fig.savefig(saida / "fig-qp1-niveis.png", dpi=300, bbox_inches="tight")
+plt.show()
+plt.close(fig)
 
+# Figura 2: objetivos
+fig, ax = plt.subplots(figsize=(12.5, 6.5))
 plotar_categorias(
-    axes[1],
+    ax,
     objetivos,
     "Objetivos de teste",
     largura_rotulo=20,
 )
+plt.tight_layout()
+fig.savefig(saida / "fig-qp1-objetivos.pdf", bbox_inches="tight")
+fig.savefig(saida / "fig-qp1-objetivos.png", dpi=300, bbox_inches="tight")
+plt.show()
+plt.close(fig)
 
+# Figura 3: técnicas
+fig, ax = plt.subplots(figsize=(8.5, 6.5))
 plotar_categorias(
-    axes[2],
+    ax,
     tecnicas,
     "Técnicas de teste",
     largura_rotulo=24,
@@ -272,7 +287,7 @@ legenda_tecnicas = [
     ),
 ]
 
-axes[2].legend(
+ax.legend(
     handles=legenda_tecnicas,
     title="Classificação complementar",
     loc="upper right",
@@ -280,12 +295,7 @@ axes[2].legend(
 )
 
 plt.tight_layout()
-
-saida = Path("./output/")
-saida.mkdir(parents=True, exist_ok=True)
-plt.savefig(saida / "fig-qp1-niveis-objetivos-tecnicas.pdf", bbox_inches="tight")
-plt.savefig(
-    saida / "fig-qp1-niveis-objetivos-tecnicas.png", dpi=300, bbox_inches="tight"
-)
-
+fig.savefig(saida / "fig-qp1-tecnicas.pdf", bbox_inches="tight")
+fig.savefig(saida / "fig-qp1-tecnicas.png", dpi=300, bbox_inches="tight")
 plt.show()
+plt.close(fig)
