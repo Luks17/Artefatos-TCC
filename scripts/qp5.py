@@ -91,7 +91,7 @@ for i, grupo in enumerate(grupos):
             estudo,
             ha="center",
             va="center",
-            fontsize=8.5,
+            fontsize=10.5,
         )
 
         base += 1
@@ -106,13 +106,13 @@ for i, grupo in enumerate(grupos):
         rotulo,
         ha="center",
         va="bottom",
-        fontsize=9.5,
+        fontsize=11.5,
     )
 
 rotulos_x = [fill(grupo["nome"], width=28) for grupo in grupos]
 
 ax.set_xticks(x)
-ax.set_xticklabels(rotulos_x, fontsize=9)
+ax.set_xticklabels(rotulos_x, fontsize=11)
 ax.set_ylabel("Quantidade de estudos")
 ax.set_ylim(0, 16.2)
 ax.grid(axis="y", linestyle="--", alpha=0.4)

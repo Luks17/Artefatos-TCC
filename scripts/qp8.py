@@ -65,7 +65,7 @@ for i, grupo in enumerate(grupos):
             estudo,
             ha="center",
             va="center",
-            fontsize=8.5,
+            fontsize=9.5,
         )
 
         base += 1
@@ -80,12 +80,12 @@ for i, grupo in enumerate(grupos):
         rotulo,
         ha="center",
         va="bottom",
-        fontsize=9.5,
+        fontsize=10.5,
     )
 
 rotulos_x = [fill(g["nome"], width=22) for g in grupos]
 
-plt.xticks(x, rotulos_x, fontsize=8.5)
+plt.xticks(x, rotulos_x, fontsize=9.5)
 plt.ylabel("Quantidade de estudos")
 plt.ylim(0, 8.5)
 plt.grid(axis="y", linestyle="--", alpha=0.4)

@@ -60,7 +60,7 @@ for i, grupo in enumerate(grupos):
                 edgecolor="black",
             )
 
-            plt.text(x[i], base + 0.5, estudo, ha="center", va="center", fontsize=9)
+            plt.text(x[i], base + 0.5, estudo, ha="center", va="center", fontsize=11)
 
             base += 1
             label = None
@@ -69,7 +69,7 @@ for i, grupo in enumerate(grupos):
     percentual = total / total_estudos * 100
     rotulo = f"{total} ({percentual:.1f}%)".replace(".", ",")
 
-    plt.text(x[i], total + 0.25, rotulo, ha="center", va="bottom", fontsize=10)
+    plt.text(x[i], total + 0.25, rotulo, ha="center", va="bottom", fontsize=12)
 
 plt.xticks([0, 1, 2], ["Artefato concreto", "Conceitual/metodológico", "Sem artefato"])
 plt.ylabel("Quantidade de estudos")

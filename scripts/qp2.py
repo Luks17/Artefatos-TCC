@@ -60,7 +60,7 @@ for i, categoria in enumerate(categorias):
             estudo,
             ha="center",
             va="center",
-            fontsize=8.5,
+            fontsize=10.5,
         )
 
         base += 1
@@ -75,12 +75,12 @@ for i, categoria in enumerate(categorias):
         rotulo,
         ha="center",
         va="bottom",
-        fontsize=9.5,
+        fontsize=11.5,
     )
 
 rotulos_x = [fill(c["nome"], width=24) for c in categorias]
 
-plt.xticks(x, rotulos_x, fontsize=8.5)
+plt.xticks(x, rotulos_x, fontsize=10.5)
 plt.ylabel("Quantidade de estudos")
 plt.ylim(0, 7.2)
 plt.grid(axis="y", linestyle="--", alpha=0.4)
